@@ -41,7 +41,8 @@ $(document).ready(function () {
     var chai = new tea("212", "10", 600, "chai");
      
     function brew($item) {
-        var teaType = window[$item.context.id];
+        var teaType = window[$item.context.id].id;
+        //console.log(teaType.id); 
         var teaNotification = $("<h1>You've selected " + teaType.type + " tea. Brew tea at <strong>" + teaType.brewTemp + "\xB0 F</strong>, then steep for <strong>" + teaType.steepTime + " minutes.</strong> Click the pot to begin steeping time. Enjoy!</h1>");
         $('#instructions').append(teaNotification);
         $('#teapot').one("click", function ()
