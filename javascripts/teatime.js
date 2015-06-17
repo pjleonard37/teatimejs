@@ -1,4 +1,24 @@
 $(document).ready(function () {
+    //Pull in JSON via AJAX
+    var request;
+    if (window.XMLHttpRequest)
+    {
+        request = new XMLHttpRequest();
+    }
+    else
+    {
+        request = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    request.open('GET', 'teas.json');
+    request.onreadystatechange = function() {
+        if((request.readyState === 4) && (request.status === 200))
+        {
+            var items = JSON.parse(request.responseText);
+            console.log(items);
+        }
+    }
+    request.send;
+
     $(function ()
     {
         herbal.buildTeaBag();
@@ -41,9 +61,9 @@ $(document).ready(function () {
     var chai = new tea("212", "10", 600, "chai");
      
     function brew($item) {
-        var teaType = window[$item.context.id].id;
-        console.log(teaType.id); 
-        var teaNotification = $("<h1>You've selected " + teaType.type + " tea. Brew tea at <strong>" + teaType.brewTemp + "\xB0 F</strong>, then steep for <strong>" + teaType.steepTime + " minutes.</strong> Click the pot to begin steeping time. Enjoy!</h1>");
+        var teaType = window[$item.context.id];
+        console.log(teaType); 
+        var teaNotification = $("<h1>You've selected " + teaType.id + " tea. Brew tea at <strong>" + teaType.brewTemp + "\xB0 F</strong>, then steep for <strong>" + teaType.steepTime + " minutes.</strong> Click the pot to begin steeping time. Enjoy!</h1>");
         $('#instructions').append(teaNotification);
         $('#teapot').one("click", function ()
         {
