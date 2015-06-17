@@ -14,7 +14,7 @@ $(document).ready(function () {
         if((request.readyState===4) && (request.status===200))
         {
             var items = JSON.parse(request.responseText);
-            console.log('0');
+            console.log(items);
         }
     }   
     request.send();
