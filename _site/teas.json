@@ -1,0 +1,52 @@
+{
+  "teas": [
+    {
+      "type": "herbal",
+      "brewtemp": "210",
+      "steeptime": "3-6",
+      "steeptimeseconds": 300
+    },
+    {
+      "type": "black",
+      "brewtemp": "205",
+      "steeptime": "2-3",
+      "steeptimeseconds": 150
+    },
+    {
+      "type": "oolong",
+      "brewtemp": "180",
+      "steeptime": "2-3",
+      "steeptimeseconds": 150
+    },
+    {
+      "type": "green",
+      "brewtemp": "175",
+      "steeptime": "1-2",
+      "steeptimeseconds": 90
+    },
+    {
+      "type": "white",
+      "brewtemp": "155",
+      "steeptime": "1-2",
+      "steeptimeseconds": 90
+    },
+    {
+      "type": "mate",
+      "brewtemp": "205",
+      "steeptime": "5-6",
+      "steeptimeseconds": 330
+    },
+    {
+      "type": "rooibos",
+      "brewtemp": "205",
+      "steeptime": "5-6",
+      "steeptimeseconds": 330
+    },
+    {
+      "type": "chai",
+      "brewtemp": "212",
+      "steeptime": "10",
+      "steeptimeseconds": 600
+    }
+  ]
+}

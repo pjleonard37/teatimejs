@@ -9,15 +9,15 @@ $(document).ready(function () {
     {
         request = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    request.open('GET', 'teas.json');
+    request.open("GET", "teas.json"); 
     request.onreadystatechange = function() {
-        if((request.readyState === 4) && (request.status === 200))
+        if((request.readyState===4) && (request.status===200))
         {
             var items = JSON.parse(request.responseText);
-            console.log(items);
+            console.log('0');
         }
-    }
-    request.send;
+    }   
+    request.send();
 
     $(function ()
     {
