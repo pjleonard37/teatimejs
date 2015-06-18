@@ -22,6 +22,7 @@ $(document).ready(function () {
     }   
     request.send();
 
+    //Build droppable teapot zone 
     $(function ()
     {
         $("#teapot").droppable({
@@ -29,10 +30,12 @@ $(document).ready(function () {
             {
                 $(this).find("h1").html("Boiling water . . .");
                 brew(ui.draggable);
+                console.log(ui.draggable);
             }
         });
     });
      
+    //Build individual teas
     function tea(tea)
     {
         this.brewTemp = tea.brewtemp;
@@ -44,9 +47,15 @@ $(document).ready(function () {
             $("#" + this.type).draggable({ revert: "invalid" });
         };
         teabag();
+        this.brew = function () {
+            console.log(7);
+        }
     }
+
     function brew($item) {
         var teaType = window[$item.context.id];
+        var test = tea(teaType).type;
+        console.log(test);
         var teaNotification = $("<h1>You've selected " + teaType.id + " tea. Brew tea at <strong>" + teaType.brewTemp + "\xB0 F</strong>, then steep for <strong>" + teaType.steepTime + " minutes.</strong> Click the pot to begin steeping time. Enjoy!</h1>");
         $('#instructions').append(teaNotification);
         $('#teapot').one("click", function ()
