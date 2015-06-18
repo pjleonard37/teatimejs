@@ -16,7 +16,7 @@ $(document).ready(function () {
             var items = JSON.parse(request.responseText);
             for (i = 0; i < items.length; i++)
             {
-                console.log(items[i].name);
+                console.log(items[i].type);
             }
         }
     }   
