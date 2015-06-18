@@ -14,7 +14,10 @@ $(document).ready(function () {
         if((request.readyState===4) && (request.status===200))
         {
             var items = JSON.parse(request.responseText);
-            console.log(items);
+            for (i = 0; i < items.length; i++)
+            {
+                console.log(items.teas[i].brewtemp);
+            }
         }
     }   
     request.send();
