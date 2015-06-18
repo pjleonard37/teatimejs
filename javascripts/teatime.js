@@ -14,10 +14,10 @@ $(document).ready(function () {
         if((request.readyState===4) && (request.status===200))
         {
             var items = JSON.parse(request.responseText);
-            for (i = 0; i < items.length; i++)
-            {
-                console.log(items.teas[i]);
-            }
+            //for (i = 0; i < items.length; i++)
+            //{
+                console.log(items);
+            //}
         }
     }   
     request.send();
