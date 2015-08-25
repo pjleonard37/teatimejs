@@ -29,12 +29,15 @@ $(document).ready(function () {
             drop: function (event, ui)
             {
                 $(this).find("h1").html("Boiling water . . .");
-                brew(ui.draggable);
                 console.log(ui.draggable);
+                brew(ui.draggable);
+
             }
         });
     });
-     
+
+    
+
     //Build individual teas
     function tea(tea)
     {
@@ -47,14 +50,14 @@ $(document).ready(function () {
             $("#" + this.type).draggable({ revert: "invalid" });
         };
         teabag();
-        this.brew = function () {
+        this.brews = function () {
             console.log(7);
         }
     }
 
     function brew($item) {
         var teaType = window[$item.context.id];
-        var test = tea(teaType).type;
+        var test = teaType;
         console.log(test);
         var teaNotification = $("<h1>You've selected " + teaType.id + " tea. Brew tea at <strong>" + teaType.brewTemp + "\xB0 F</strong>, then steep for <strong>" + teaType.steepTime + " minutes.</strong> Click the pot to begin steeping time. Enjoy!</h1>");
         $('#instructions').append(teaNotification);
@@ -67,7 +70,7 @@ $(document).ready(function () {
         $item.fadeOut(1600);
         $(".gallery").fadeOut(2000);
     }
-     
+    
     function clock(brewTime)
     {
         var brewTimeStatic = brewTime;
